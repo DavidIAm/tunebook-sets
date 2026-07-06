@@ -1,0 +1,10 @@
+node_modules/
+.cache/
+.claude/
+
+# per-user saved sets (legacy server-side store; app now uses localStorage)
+data/mysets.json
+
+# scraped irishtune.info relations — Alan Ng's curated data, not for
+# redistribution; regenerate locally with the scraper if needed
+data/itinfo-data.json

@@ -1,0 +1,277 @@
+{
+ "sets": 2168,
+ "pairs": 3139,
+ "notePairs": 3139,
+ "keyRelationship": [
+  [
+   "signature step (±1 accidental)",
+   1903
+  ],
+  [
+   "same key",
+   564
+  ],
+  [
+   "modal cousin (same signature)",
+   433
+  ],
+  [
+   "signature jump (≥2)",
+   239
+  ]
+ ],
+ "signatureDelta": [
+  [
+   "0",
+   997
+  ],
+  [
+   "1",
+   978
+  ],
+  [
+   "-1",
+   925
+  ],
+  [
+   "-2",
+   87
+  ],
+  [
+   "2",
+   85
+  ],
+  [
+   "-3",
+   29
+  ],
+  [
+   "-4",
+   19
+  ],
+  [
+   "3",
+   18
+  ],
+  [
+   "4",
+   1
+  ]
+ ],
+ "topKeyChanges": [
+  [
+   "Gmajor → Dmajor",
+   639
+  ],
+  [
+   "Dmajor → Gmajor",
+   592
+  ],
+  [
+   "Adorian → Dmajor",
+   92
+  ],
+  [
+   "Dmajor → Adorian",
+   84
+  ],
+  [
+   "Gmajor → Adorian",
+   73
+  ],
+  [
+   "Gmajor → Eminor",
+   59
+  ],
+  [
+   "Adorian → Gmajor",
+   55
+  ],
+  [
+   "Gmajor → Edorian",
+   50
+  ],
+  [
+   "Dmajor → Edorian",
+   44
+  ],
+  [
+   "Edorian → Gmajor",
+   44
+  ],
+  [
+   "Ddorian → Gmajor",
+   41
+  ],
+  [
+   "Edorian → Dmajor",
+   36
+  ],
+  [
+   "Gmajor → Ddorian",
+   35
+  ],
+  [
+   "Dmajor → Amajor",
+   28
+  ],
+  [
+   "Eminor → Gmajor",
+   27
+  ]
+ ],
+ "typeRelationship": [
+  [
+   "same type",
+   2844
+  ],
+  [
+   "type change",
+   295
+  ]
+ ],
+ "meterRelationship": [
+  [
+   "same meter",
+   2948
+  ],
+  [
+   "meter change",
+   191
+  ]
+ ],
+ "lastNoteVsOwnTonic": [
+  [
+   "unison",
+   1757
+  ],
+  [
+   "2",
+   336
+  ],
+  [
+   "5",
+   254
+  ],
+  [
+   "6",
+   219
+  ],
+  [
+   "4",
+   205
+  ],
+  [
+   "7",
+   134
+  ],
+  [
+   "3",
+   129
+  ],
+  [
+   "b7",
+   75
+  ],
+  [
+   "b6",
+   22
+  ],
+  [
+   "b3",
+   8
+  ]
+ ],
+ "firstNoteVsOwnTonic": [
+  [
+   "5",
+   1064
+  ],
+  [
+   "unison",
+   1058
+  ],
+  [
+   "3",
+   508
+  ],
+  [
+   "2",
+   172
+  ],
+  [
+   "6",
+   151
+  ],
+  [
+   "b3",
+   94
+  ],
+  [
+   "4",
+   51
+  ],
+  [
+   "b7",
+   32
+  ],
+  [
+   "7",
+   6
+  ],
+  [
+   "b6",
+   2
+  ],
+  [
+   "b5",
+   1
+  ]
+ ],
+ "nextFirstNoteVsPrevTonic": [
+  [
+   "unison",
+   722
+  ],
+  [
+   "5",
+   644
+  ],
+  [
+   "2",
+   531
+  ],
+  [
+   "4",
+   337
+  ],
+  [
+   "6",
+   335
+  ],
+  [
+   "3",
+   210
+  ],
+  [
+   "7",
+   175
+  ],
+  [
+   "b7",
+   120
+  ],
+  [
+   "b3",
+   37
+  ],
+  [
+   "b6",
+   23
+  ],
+  [
+   "b5",
+   5
+  ]
+ ]
+}

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tunebook Sets</title>
+  <link rel="stylesheet" href="/vendor/abcjs/abcjs-audio.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="/vendor/abcjs/dist/abcjs-basic-min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Tunebook Sets</h1>
+    <form id="member-form">
+      <input id="member-input" placeholder="thesession.org username or id" value="skylos" autocomplete="off">
+      <button type="submit">Load tunebook</button>
+    </form>
+    <nav>
+      <button class="tab active" data-view="cards">Cards</button>
+      <button class="tab" data-view="builder">Set builder</button>
+      <button class="tab" data-view="whelan">Whelan sets</button>
+      <button class="tab" data-view="analysis">Set analysis</button>
+    </nav>
+    <span id="status"></span>
+    <progress id="fetch-progress" hidden></progress>
+  </header>
+
+  <main>
+    <section id="view-cards" class="view active">
+      <div class="toolbar">
+        <input id="card-search" placeholder="filter by name…">
+        <select id="card-type"><option value="">all types</option></select>
+        <select id="card-key"><option value="">all keys</option></select>
+      </div>
+      <div id="card-grid" class="grid"></div>
+    </section>
+
+    <section id="view-builder" class="view">
+      <div class="builder-cols">
+        <div class="panel" id="current-set-panel">
+          <h2>Current set</h2>
+          <ol id="current-set"></ol>
+          <div class="row">
+            <input id="set-name" placeholder="set name (optional)">
+            <button id="save-set">Save set</button>
+            <button id="clear-set" class="ghost">Clear</button>
+          </div>
+          <h2>Saved sets</h2>
+          <ul id="saved-sets"></ul>
+        </div>
+        <div class="panel">
+          <h2>Suggestions</h2>
+          <div class="row" id="mode-row">
+            <label><input type="radio" name="mode" value="cousin" checked> Cousin keys (same signature)</label>
+            <label><input type="radio" name="mode" value="step"> Step transition (first note ±1 step from tonic)</label>
+            <label><input type="radio" name="mode" value="voice"> Voice-leading (pick up the ending note)</label>
+            <label><input type="radio" name="mode" value="style"> Style match (learned from your sets)</label>
+            <label><input type="radio" name="mode" value="heuristic"> Heuristic suggestions (six 3-tune sets)</label>
+            <label><input type="radio" name="mode" value="all"> Everything</label>
+          </div>
+          <div class="row">
+            <label><input type="checkbox" id="same-type" checked> same tune type</label>
+            <label><input type="checkbox" id="exclude-used" checked> hide tunes already in set</label>
+          </div>
+          <div class="row" id="heur-recipe-row" hidden>
+            <span>recipe:</span>
+            <label><input type="radio" name="heurrecipe" value="whelan" checked> Whelan (±1 step every seam, arch home, never repeat a key)</label>
+            <label><input type="radio" name="heurrecipe" value="conventional"> Conventional (steps, cousins &amp; same-key allowed; arch optional)</label>
+          </div>
+          <div class="row" id="heur-pos-row" hidden>
+            <span>seed position:</span>
+            <label><input type="radio" name="heurpos" value="contains" checked> contains</label>
+            <label><input type="radio" name="heurpos" value="start"> starts with</label>
+            <label><input type="radio" name="heurpos" value="end"> ends with</label>
+          </div>
+          <div class="row" id="heur-view-row" hidden>
+            <span>view:</span>
+            <label><input type="radio" name="heurview" value="list" checked> compact list</label>
+            <label><input type="radio" name="heurview" value="cards"> tune cards (6 columns)</label>
+          </div>
+          <div id="suggestions" class="grid small"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-whelan" class="view">
+      <div class="toolbar">
+        <input id="whelan-search" placeholder="filter by tune name…">
+        <select id="whelan-type"><option value="">all types</option></select>
+        <select id="whelan-sort">
+          <option value="count">most played</option>
+          <option value="recent">most recent</option>
+        </select>
+        <span id="whelan-stats" class="muted"></span>
+      </div>
+      <div id="whelan-list"></div>
+    </section>
+
+    <section id="view-analysis" class="view">
+      <p id="analysis-hint">Analyzes the member's existing sets on thesession.org: how consecutive tunes relate in key, signature, and edge notes.</p>
+      <button id="run-analysis">Analyze my sets</button>
+      <div id="analysis-out"></div>
+    </section>
+  </main>
+
+  <div id="music-overlay" hidden>
+    <div class="overlay-bar">
+      <span id="overlay-title"></span>
+      <button id="overlay-close">✕ close (Esc)</button>
+    </div>
+    <div id="overlay-content"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
