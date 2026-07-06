@@ -12,7 +12,6 @@
   },
   "dependencies": {
     "abcjs": "^6.4.0",
-    "express": "^4.19.0",
-    "tunebook-flashcards": "file:../tunebook-flashcards"
+    "express": "^4.19.0"
   }
 }

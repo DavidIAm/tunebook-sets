@@ -3,8 +3,8 @@ import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { SessionFetcher, jobStart, jobUpdate, jobSubscribe } from './fetch-queue.js';
-import { meterFor, keySignature, prettyKey, buildAbc } from 'tunebook-flashcards/src/abc.js';
-import { meterColor, sigColor } from 'tunebook-flashcards/src/palette.js';
+import { meterFor, keySignature, prettyKey, buildAbc } from './abc.js';
+import { meterColor, sigColor } from './palette.js';
 import { parseKey, stepNeighbours, edgeNotes, pcName } from './music.js';
 import { analyzeSets } from './analysis.js';
 

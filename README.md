@@ -5,12 +5,18 @@ thesession.org tunebook as on-screen flashcards (same key/meter edge bands) and
 build sets with key-aware suggestions.
 
 ## Run
-Requires a sibling checkout of
-[tunebook-flashcards](../tunebook-flashcards) (the `file:../tunebook-flashcards`
-dependency supplies the ABC/key helpers).
-
     npm install
     npm start          # http://localhost:3117
+
+## Deploy (container)
+Every push to `main` builds and publishes an image via GitHub Actions:
+
+    docker run -d -p 3117:3117 -v tunebook-cache:/app/.cache \
+      ghcr.io/davidiam/tunebook-sets:latest
+
+The volume keeps the polite thesession.org response cache across restarts
+(optional — it rebuilds on demand). Tags: `latest` (main), `sha-…` per
+commit, and semver tags on `v*` releases.
 
 Reuses `../tunebook-flashcards/.cache` when present, so tunes already fetched
 for the PDF generator load instantly. Override with `CACHE_DIR=... npm start`.

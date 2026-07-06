@@ -1,0 +1,10 @@
+node_modules
+.cache
+.git
+.github
+.claude
+docs
+data/mysets.json
+data/itinfo-data.json
+Dockerfile
+.dockerignore
