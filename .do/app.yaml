@@ -1,0 +1,21 @@
+name: tunebook-sets
+region: sfo
+services:
+  - name: web
+    dockerfile_path: Dockerfile
+    source_dir: /
+    github:
+      repo: DavidIAm/tunebook-sets
+      branch: main
+      deploy_on_push: true
+    http_port: 3117
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    health_check:
+      http_path: /
+    # App Platform has no persistent volumes: the thesession.org response
+    # cache is ephemeral and rebuilds through the polite queue on demand.
+    # All user state lives in the browser (localStorage).
+domains:
+  - domain: tunes.skylosian.dev
+    type: PRIMARY
