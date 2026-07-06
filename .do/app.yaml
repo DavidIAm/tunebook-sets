@@ -1,13 +1,16 @@
+# DigitalOcean App Platform spec (deployed as app dd960af7-b982-4a8e-a537-eddea4632502).
+# The app deploys the public GHCR image built by .github/workflows/container.yml;
+# the workflow triggers a DO redeploy after each image push (needs the
+# DIGITALOCEAN_ACCESS_TOKEN repo secret).
 name: tunebook-sets
 region: sfo
 services:
   - name: web
-    dockerfile_path: Dockerfile
-    source_dir: /
-    github:
-      repo: DavidIAm/tunebook-sets
-      branch: main
-      deploy_on_push: true
+    image:
+      registry_type: GHCR
+      registry: davidiam
+      repository: tunebook-sets
+      tag: latest
     http_port: 3117
     instance_count: 1
     instance_size_slug: basic-xxs

@@ -42,3 +42,18 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+
+      - name: Trigger DigitalOcean redeploy
+        if: github.ref == 'refs/heads/main'
+        env:
+          DO_TOKEN: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$DO_TOKEN" ]; then
+            echo "DIGITALOCEAN_ACCESS_TOKEN secret not set; skipping redeploy"
+            exit 0
+          fi
+          curl -sf -X POST \
+            -H "Authorization: Bearer $DO_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{}' \
+            https://api.digitalocean.com/v2/apps/dd960af7-b982-4a8e-a537-eddea4632502/deployments
